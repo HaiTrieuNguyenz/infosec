@@ -20,6 +20,7 @@ Setup a set of vms/containers in a network configuration of 2 subnets (1,2) with
 **Question 2**:
 - Enable packet forwarding on the router.
 - Deface the webserver's home page with ssh connection on PC1
+- 
 **Answer 2**:
 ##1. Enable packet forwarding :
 *Using iptables to do this
@@ -39,6 +40,7 @@ Using iptables to block ssh to web server from PC1 on router :
 **Question 4**:
 - PC1 now servers as a UDP server, make sure that it can reply UDP ping from other hosts on both subnets.
 - Config personal firewall on PC1 to block UDP accesses from PC2 while leaving UDP access from the server intact.
+  
 **Answer 4**:
 **Ping PC1 using PC2
 ![image](https://github.com/user-attachments/assets/f4b7799c-611d-4272-9122-bdc7ed029012)
@@ -54,6 +56,7 @@ Use PC0 and PC2 for this lab
 Create a text file at least 56 bytes on PC2 this file will be sent encrypted to PC0
 **Question 1**:
 Encrypt the file with aes-cipher in CTR and OFB modes. How do you evaluate both cipher in terms of error propagation and adjacent plaintext blocks are concerned. 
+
 **Answer 1**:
 - Demonstrate your ability to send file to PC0 to with message authentication measure.
 - Verify the received file for each cipher modes
