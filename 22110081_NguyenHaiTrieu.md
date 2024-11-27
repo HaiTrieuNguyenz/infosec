@@ -35,7 +35,6 @@ Setup a set of vms/containers in a network configuration of 2 subnets (1,2) with
 
 **Answer 3**:
 Using iptables to block ssh to web server from PC1 on router :
-![image](https://github.com/user-attachments/assets/17435a55-01de-4831-98e7-10bcda340a91)
 
 **Question 4**:
 - PC1 now servers as a UDP server, make sure that it can reply UDP ping from other hosts on both subnets.
@@ -43,10 +42,12 @@ Using iptables to block ssh to web server from PC1 on router :
   
 **Answer 4**:
 **Ping PC1 using PC2
-![image](https://github.com/user-attachments/assets/f4b7799c-611d-4272-9122-bdc7ed029012)
+![image](https://github.com/user-attachments/assets/17435a55-01de-4831-98e7-10bcda340a91)
+
 **Config personal firewall on PC1 to block UDP accesses from PC2  while leaving UDP access from the server intact :
   We need to install iptables on PC1 first since we haven't installed on docker-compose.yml :
-  ![image](https://github.com/user-attachments/assets/84d27734-8163-495c-825d-131a2d6e82e5)
+![image](https://github.com/user-attachments/assets/f4b7799c-611d-4272-9122-bdc7ed029012)
+  
   Then we block UDP accesses from PC2 and leave UDP access from the server intact :
   iptables -A INPUT -p udp -s 172.19.0.3 -j DROP ( Here we will DROP all access from source 172.19.0.3 using port udp )
   # Allow UDP access from webserver
@@ -62,14 +63,17 @@ Encrypt the file with aes-cipher in CTR and OFB modes. How do you evaluate both 
 - Verify the received file for each cipher modes
 - Encrypt the file
   First we create a file text more than 56 bytes :
-  ![image](https://github.com/user-attachments/assets/4fff7731-bb9c-40bc-89ad-88b074e5ac37)
   Then encrypt the file using CTR Mode and OFB Mode using openssl :
-  ![image](https://github.com/user-attachments/assets/58cd732f-2734-4f02-bc4a-5b60f680ee81)
+  ![image](https://github.com/user-attachments/assets/4fff7731-bb9c-40bc-89ad-88b074e5ac37)
+
+
   Then install Open-ssh client to send file ( this will help us to authenticate our message ):
   apt-get update && apt-get install -y openssh-client
   Then send it to PC0 using :
   scp ctr_encrypted.txt root@172.18.0.2:/root/
   scp ofb_encrypted.txt root@172.18.0.2:/root/
+
+  ![image](https://github.com/user-attachments/assets/58cd732f-2734-4f02-bc4a-5b60f680ee81)
   Here is our encrypted file on PC0
    ![image](https://github.com/user-attachments/assets/3150aee7-31a8-4436-aee6-91a7a746314e)
   Compared with the encrypted file on PC2 :
