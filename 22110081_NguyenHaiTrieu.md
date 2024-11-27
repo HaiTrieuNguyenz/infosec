@@ -1,10 +1,14 @@
-![image](https://github.com/user-attachments/assets/83885d40-e8b4-45c2-ab41-4c4f72393b33)# Lab #2,22110081, Nguyen Hai Trieu, INSE330380E_03FIE
+
+# Lab #2,22110081, Nguyen Hai Trieu, INSE330380E_03FIE
+
 **Question 1**: 
 Setup a set of vms/containers in a network configuration of 2 subnets (1,2) with a router forwarding traffic between them. Relevant services are also required:
 - The router is initially can not route traffic between subnets
 - PC0 on subnet 1 serves as a web server on subnet 1
-- PC1,PC2 on subnet 2 acts as client workstations on subnet 2 
+- PC1,PC2 on subnet 2 acts as client workstations on subnet 2
+  
 **Answer 1**:
+
 ## 1. Create a network with router, 2 subnet using docker-compose.yml:
 *docker-compose.yml
 ![image](https://github.com/user-attachments/assets/8b620ba4-4100-4f30-8ce4-b364057cc0c7)
