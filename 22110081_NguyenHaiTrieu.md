@@ -20,7 +20,7 @@ Setup a set of vms/containers in a network configuration of 2 subnets (1,2) with
 **Question 2**:
 - Enable packet forwarding on the router.
 - Deface the webserver's home page with ssh connection on PC1
-- 
+  
 **Answer 2**:
 ##1. Enable packet forwarding :
 *Using iptables to do this
